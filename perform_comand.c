@@ -1,31 +1,39 @@
 #include "shell.h"
+
 /**
- * perform_command - Execute a given command in a child process.
- *  The command to execute.
+ * execute_instruction - Execute a given instruction in a child process.
+ * @instruction: The instruction to execute.
  */
-void perform_command(const char *command)
- {
-    pid_t child_pid = fork();
+void execute_instruction(const char *instruction)
+{
+    pid_t child_process = fork();
 
-    if (child_pid == -1) {
-       my_print("fork error");
+    if (child_process == -1)
+    {
+        perror("fork");
         exit(EXIT_FAILURE);
-    } else if (child_pid == 0) {
-        char *args[MAX_ARGUMENTS];
-        int arg_count = 0;
+    }
+    else if (child_process == 0)
+    {
+        char *message[MAX_ARGUMENTS];
+        int message_count = 0;
 
-        char *token = strtok((char *)command, " ");
-        while (token != NULL && arg_count < MAX_ARGUMENTS - 1) {
-            args[arg_count++] = token;
+        char *token = strtok((char *)instruction, " ");
+        while (token != NULL && message_count < MAX_ARGUMENTS - 1)
+        {
+            message[message_count++] = token;
             token = strtok(NULL, " ");
         }
-        args[arg_count] = NULL;
-        if (execve(args[0], args, NULL) == -1) {
-          my_print("execve error");
+        message[message_count] = NULL;
+
+        if (execve(message[0], message, NULL) == -1)
+        {
+            perror("execve");
             exit(EXIT_FAILURE);
         }
-    } else {
-        int status;
-        waitpid(child_pid, &status, 0);
+    }
+    else
+    {
+        wait(NULL);
     }
 }
