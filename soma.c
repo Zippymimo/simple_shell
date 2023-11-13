@@ -1,6 +1,6 @@
 #include "shell.h"
-/*
- *
+/*soma_command(char *command, size_t size)- function that takes two parameters a 'command' a character array to store input command,'size'it is the maximum size of the input buffer.
+ *command[strcspn(command, "\n")] = '\0'  Removes the newline character from the end of the input
  *
  */
 void soma_command(char *command, size_t size)
