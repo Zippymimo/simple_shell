@@ -4,13 +4,13 @@
  */
 void env_builtin(void)
 {
-	extern char **environment;
-	char **envpointer = environment;
+	extern char **environ;
+	char **env_ptr = environ;
 
-	while (*envpointer != NULL)
+	while (*env_ptr != NULL)
 	{
-		my_print(*envpointer);
+		my_print(*env_ptr);
 		my_print("\n");
-		envpointer++;
+		env_ptr++;
 	}
 }
