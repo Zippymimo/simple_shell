@@ -23,6 +23,5 @@ void display_wd(void);
 void my_print(const char *input_string);
 void soma_command(char *command, size_t size);
 void execute_instruction(const char *instruction);
-int split_command(const char *command, char *tokens[]);
-int find_command_in_path(const char *command);
+void env_builtin(void);
 #endif
