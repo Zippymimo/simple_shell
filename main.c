@@ -2,7 +2,6 @@
 /*shows the entry point
  *show_prompt displays the prompt
 
-
 int main(void)
 {
     char command[MAX_ARGUMENTS];
@@ -18,9 +17,9 @@ int main(void)
 
         if (token_count > 0)
         {
-            if (strcmp(tokens[0], "env") == 0)
+            if (strcmp(tokens[0], "exit") == 0)
             {
-                env_builtin();
+                break;
             }
             else
             {
@@ -28,25 +27,49 @@ int main(void)
             }
         }
     }
+
     return 0;
 }
-*/
-int main(void) {
+ * main - Entry point for the simple shell.
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
     char command[MAX_ARGUMENTS];
     char *tokens[MAX_TOKENS];
 
-    while (true) {
+    while (true)
+    {
         int token_count;
         display_wd();
         soma_command(command, sizeof(command));
 
         token_count = split_command(command, tokens);
 
-        if (token_count > 0) {
-            if (strcmp(tokens[0], "exit") == 0) {
+        if (token_count > 0)
+        {
+            if (strcmp(tokens[0], "path") == 0)
+            {
+            }
+            else if (strcmp(tokens[0], "exit") == 0)
+            {
                 break;
-            } else {
-                execute_instruction(command);
+            }
+            else if (strcmp(tokens[0], "env") == 0)
+            {
+                env_builtin();
+            }
+            else
+            {
+                if (find_command_in_path(tokens[0]))
+                {
+                    execute_instruction(command);
+                }
+                else
+                {
+                    printf("Command not found: %s\n", tokens[0]);
+                }
             }
         }
     }

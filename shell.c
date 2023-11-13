@@ -1,6 +1,6 @@
 #include "shell.h"
-
-static char input_buffer[READ_BUFFER_SIZE];
+/*
+*static char input_buffer[READ_BUFFER_SIZE];
 static size_t buffer_position = 0;
 static size_t buffer_size = 0;
 static void refill_buffer(void) {
@@ -41,3 +41,4 @@ ssize_t my_getline(char **lineptr, size_t *n) {
     (*lineptr)[line_length] = '\0';
     return (ssize_t)line_length;
 }
+*/

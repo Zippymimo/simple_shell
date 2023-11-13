@@ -25,5 +25,6 @@ void soma_command(char *command, size_t size);
 void execute_instruction(const char *instruction);
 void env_builtin(void);
 int split_command(const char *command, char *tokens[]);
+int find_command_in_path(const char *command);
 
 #endif

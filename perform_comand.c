@@ -1,5 +1,4 @@
 #include "shell.h"
-
 /**
  * execute_instruction - Execute a given instruction in a child process.
  * @instruction: The instruction to execute.
@@ -29,6 +28,7 @@ void execute_instruction(const char *instruction)
         if (execve(message[0], message, NULL) == -1)
         {
             perror("execve");
+            /*fprintf(stderr, "Error executing command: %s\n", message[0]);*/
             exit(EXIT_FAILURE);
         }
     }
