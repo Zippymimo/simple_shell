@@ -1,7 +1,9 @@
 #include "shell.h"
-/* this is my print function
- * it prints the string passed to it
+/*
+ * my_print - this is my print function
+ * @input_string: The string to be printed.
  *
+ * Description: This function writes the provided string to the standard output
  */
 void my_print(const char *input_string)
 {

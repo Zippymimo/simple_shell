@@ -1,8 +1,16 @@
 #include "shell.h"
-/*soma_command(char *command, size_t size)- function that takes two parameters a 'command' a character array to store input command,'size'it is the maximum size of the input buffer.
- *command[strcspn(command, "\n")] = '\0'  Removes the newline character from the end of the input
+/**
+ * soma_command - Reads a command from the standard input.
+ * @command: A character array to store the input command.
+ * @size: The size of the command array.
  *
+ * Description:
+ * This function reads a command from the standard input using fgets.
+ * If an end-of-file is encountered, it prints a newline and exits suces.
+ * If there is an input error, it prints an error message
+ * The newline character at the end of the command is replaced with 0/
  */
+
 void soma_command(char *command, size_t size)
 {
 	if (fgets(command, size, stdin) == NULL)
