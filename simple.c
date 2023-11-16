@@ -1,9 +1,9 @@
 #include "shell.h"
 /**
- * Aprogram that print a line using the my_print function.
+ * print_string - prints string.
  *
  */
-void my_print(const char *input_string)
+void print_string(void)
 {
 	my_print("Austine and Zippy making their first shell!\n");
 }

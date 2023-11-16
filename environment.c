@@ -4,7 +4,6 @@
  */
 void env_builtin(void)
 {
-	char **environ;
 	char **env_ptr = environ;
 
 	while (*env_ptr != NULL)

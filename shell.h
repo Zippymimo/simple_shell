@@ -18,8 +18,10 @@
 #define MAX_TOKENS 64
 #define MAX_INPUT_LENGTH 80
 #define READ_BUFFER_SIZE 1024
+extern char **environ;
 
 void display_wd(void);
+void print_string(void);
 void my_print(const char *input_string);
 void soma_command(char *command, size_t size);
 void execute_instruction(const char *instruction);
