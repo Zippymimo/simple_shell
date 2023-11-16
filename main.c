@@ -1,11 +1,12 @@
 #include "shell.h"
-/*
+/**
  * main - Entry point for the shell program.
  *
  * Description:
  * This function starts the shell and enters a loop n wait command
  * user commands until the "exit" command is entered. It displays the current
  * working directory, reads input commands, and executes them accordingly.
+ * Return: zero on success
  */
 int main(void)
 {

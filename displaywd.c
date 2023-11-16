@@ -1,5 +1,5 @@
 #include "shell.h"
-/*
+/**
  * display_wd-this function displays the working
  */
 

@@ -2,14 +2,7 @@
 /**
  * find_command_in_path - Looks for the specified command in the PATH variable.
  * @command: The command to search for.
- *
- *
- * Description:
- * find_command_in_path - this function search for specified command in path
- * in the PATH environment variable. It returns 1 if the command is found and
- * is executable; otherwise, it returns 0.
- *
- * return: 1 if the command is found in the PATH, 0 otherwise.
+ * Return: 1 if the comand is found.
  */
 int find_command_in_path(const char *command)
 {

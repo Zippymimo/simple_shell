@@ -1,16 +1,9 @@
 #include "shell.h"
-/*
+/**
  * split_command - Split a command into an array of tokens.
  * @command: The command to split.
  * @tokens: An array to store the tokens.
- *
- * Description:
- * This function takes a command string and splits it into an array of tokens.
- * It uses whitespace as the delimiter. The tokens are stored in the array
- * function returns the count of tokens.
- * split_command - Split a command into an array of tokens.
- * @command: The command to split.
- * @tokens: An array to store the tokens.
+ * Return: return the count of tokens.
  */
 int split_command(const char *command, char *tokens[])
 {

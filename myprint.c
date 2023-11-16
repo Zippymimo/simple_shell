@@ -1,5 +1,5 @@
 #include "shell.h"
-/*
+/**
  * my_print - this is my print function
  * @input_string: The string to be printed.
  *

@@ -2,15 +2,12 @@
 /**
  * execute_instruction - Execute a given instruction in a child process.
  * @instruction: The instruction to execute.
- * /**
  * execute_instruction - Execute a given instruction in a child process.
  *
  * Description:
  * This function takes a command instruction as input, forks a cp,
  * and executes the instruction in the child process using the execve system
  * call. It waits for the child process to complete in the parent process.
- *
- * @instruction: The command instruction to execute.
  */
 void execute_instruction(const char *instruction)
 {
