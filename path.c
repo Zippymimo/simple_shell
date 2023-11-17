@@ -13,17 +13,16 @@ int find_command_in_path(const char *command)
 	while (dir != NULL)
 	{
 		char full_path[MAX_PATH_SIZE];
-
-		printf(full_path, sizeof(full_path), "%s/%s", dir, command);
+		snprintf(full_path, sizeof(full_path), "%s/%s", dir, command);
 
 		if (access(full_path, X_OK) == 0)
 		{
 			free(path_copy);
-			return (1);
+			return 1;
 		}
 
 		dir = strtok(NULL, ":");
 	}
 	free(path_copy);
-	return (0);
+	return 0;
 }
